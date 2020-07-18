@@ -16,7 +16,7 @@ public class HomeCtrl {
     }
 
     @GetMapping("/add")
-    public String addPost(Model model) {
+    public String guestbookForm(Model model) {
         model.addAttribute("guestbook", new Guestbook());
         return "guestbook";
     }
