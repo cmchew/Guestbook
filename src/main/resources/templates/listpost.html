@@ -38,9 +38,9 @@
     <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav">
             <li class="nav-item active">
-                <a class="nav-link" href="/guestbook">Add Guests<span class="sr-only">(current)</span></a>
+                <a class="nav-link" href="/newpost">Add New Post<span class="sr-only">(current)</span></a>
             <li class="nav-item active">
-                <a class="nav-link" href="/list">Guest Posts<span class="sr-only">(current)</span></a>
+                <a class="nav-link" href="/listpost">View All Posts<span class="sr-only">(current)</span></a>
         </ul>
     </div>
 </nav>
@@ -60,15 +60,16 @@
     </tr>
     </thead>
     <tbody>
-    <tr th:each="guestbook : ${allGuestbooks}">
-        <td>[[${guestbook.id}]]</td>
-        <td>[[${guestbook.name}]]</td>
-        <td>[[${guestbook.postdate}]]
-        <td>[[${guestbook.wishes}]]</td>
+    <tr th:each="post : ${book}">
+        <td>[[${post.id}]]</td>
+        <td>[[${post.name}]]</td>
+        <td>[[${post.wish}]]</td>
+        <td>[[${post.date}]]</td>
+
         <td>
-            <button><a th:href="@{/update/{id} (id = ${guestbook.id})}">Update</a></button>
-            <button><a th:href="@{/detail/{id} (id = ${guestbook.id})}">Detail</a></button>
-            <button><a th:href="@{/delete/{id} (id = ${guestbook.id})}">Delete</a></button>
+            <button><a th:href="@{/update/{id} (id = ${post.id})}">Update</a></button>
+            <button><a th:href="@{/view/{id} (id = ${post.id})}">View</a></button>
+            <button><a th:href="@{/delete/{id} (id = ${post.id})}">Delete</a></button>
         </td>
     </tr>
     </tbody>
@@ -76,20 +77,8 @@
 
 
 
-
-<!--<div class="list" th:each="guestbook : ${allGuestbooks}">-->
-<!--    <p>-&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;</p>-->
-<!--    <p>Post ID: [[${guestbook.id}]]</p>-->
-<!--    <p>Name: [[${guestbook.name}]]<br>-->
-<!--    <p>Guest wishes [[${guestbook.wishes}]]</p>-->
-<!--    <p>Post Date: [[${guestbook.postDate}]]</p>-->
-
-<!--    <a href="@{/update/{id}{id=${course.id}"-->
-
-
-<!--</div>-->
 <div class="link">
-    <a class="btn btn-success" href="/guestbook" role="button">Add a guest</a>
+    <a class="btn btn-success" href="/newpost" role="button">Add a wish!</a>
 </div>
 
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>

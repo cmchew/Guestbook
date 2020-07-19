@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>The Royal Wedding</title>
-    <link rel="stylesheet" type="text/css" href="stylesheet/main.css">
+
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
 </head>
 <style>
@@ -18,18 +18,8 @@
         color: white;
         background-color: #4CAF50;
     }
-    .link {
-        color: #4CAF50;
-        margin-left: 80px;
-        margin-right: 80px;
-    }
-
-    .list{
-        margin-left: 80px;
-        margin-right: 80px;
-    }
 </style>
-
+<body>
 <nav class="navbar navbar-expand-lg navbar-dark bg-primary".>
     <a class="navbar-brand">The Royal Wedding</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -38,34 +28,44 @@
     <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav">
             <li class="nav-item active">
-                <a class="nav-link" href="/guestbook">Add Guests<span class="sr-only">(current)</span></a>
+                <a class="nav-link" href="/newpost">Add New Post<span class="sr-only">(current)</span></a>
             <li class="nav-item active">
-                <a class="nav-link" href="/list">Guest Posts<span class="sr-only">(current)</span></a>
+                <a class="nav-link" href="/listpost">View All Posts<span class="sr-only">(current)</span></a>
         </ul>
     </div>
 </nav>
 <br>
 <br>
+<div class="form">
 
-<body>
-
-<a href="/">Show all Guest Entries</a>
-<br>
-Guest ID: <span th:text="${guestbook.id}"></span>
-Guest Name: <span th:text="${guestbook.name}"></span>
-Guest Post: <span th:text="${guestbook.wishes}"></span>
-Post Date: <span th:text="${guestbook.postDate}"></span>
-
-<br>
-<button><a th:href="@{/delete/{id}(id = ${guestbook.id})}">Delete this post</a></button>
-
+<h4>Celebrating Prince Harry and Meghan Markle</h4>
+    <p><em>Thanks for watching our broadcast of the royal wedding.
+        <br>Please sign this online guestbook and we'll get your good wishes
+    to the new couple.</em></p><br>
+<form action="#"
+      th:action="@{/newpost}"
+      th:object="${post}"
+      method="post">
+    Guest ID: <input type="number" th:field="*{id}"/>
+    <br>
+    <br>
+    Guest Name:<input type="text" th:field="*{name}"/>
+    <br>
+    <br>
+    Guest Wishes:<textarea rows="3" cols="50" th:field="*{wish}"></textarea>
+    <br>
+    <br>
+    Post Date: <input type="date" th:field="*{date}"/>
+    <br>
+    <br>
+    <input type="submit" value="Enter"/>
+</form>
+</div>
 
 
 
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
-</body>
-</html>
 </body>
 </html>
