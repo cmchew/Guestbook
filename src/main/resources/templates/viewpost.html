@@ -6,10 +6,36 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
 
 </head>
+<style>
+    .main {
+        padding: 20px;
+    }
+    .form {
+        border-radius: 5px;
+        background-color: #E8E8E8;
+        padding: 20px;
+    }
+    input[type=submit] {
+        width: 20%;
+        border: none;
+        color: white;
+        background-color: #4CAF50;
+    }
+    .link {
+        color: #4CAF50;
+        margin-left: 80px;
+        margin-right: 80px;
+    }
+
+    .list{
+        margin-left: 80px;
+        margin-right: 80px;
+    }
+</style>
 <body>
 
-<nav class="navbar navbar-expand-lg navbar-dark bg-primary".>
-    <a class="navbar-brand">The Royal Wedding</a>
+<nav class="navbar navbar-expand-lg navbar-dark bg-success".>
+    <a class="navbar-brand" href="#"><img src="../images/sussex.png" height="59" width="45"/>The Royal Wedding</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
@@ -19,11 +45,15 @@
                 <a class="nav-link" href="/newpost">Add New Post<span class="sr-only">(current)</span></a>
             <li class="nav-item active">
                 <a class="nav-link" href="/listpost">View All Posts<span class="sr-only">(current)</span></a>
+            <li class="nav-item active">
+                <a class="nav-link" href="/">Back to the Ceremony<span class="sr-only">(current)</span></a>
         </ul>
     </div>
 </nav>
 <br>
 <br>
+
+<div class="main">
 <h4>Wedding Wishes for Harry and Meghan</h4>
 
 <div>
@@ -39,14 +69,11 @@
     <br>
     [[${post.date}]]
 </div>
-
+<br>
 <div>
     <button><a th:href="@{/update/{id} (id = ${post.id})}">Update</a></button>
     <button><a th:href="@{/delete/{id} (id = ${post.id})}">Delete</a></button>
 </div>
-<br>
-<div class="link">
-    <a class="btn btn-success" href="/index" role="button">Back to the ceremony!</a>
 </div>
 
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>

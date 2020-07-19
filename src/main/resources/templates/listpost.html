@@ -7,6 +7,9 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
 </head>
 <style>
+    .main {
+        padding: 20px;
+    }
     .form {
         border-radius: 5px;
         background-color: #E8E8E8;
@@ -30,8 +33,8 @@
     }
 </style>
 
-<nav class="navbar navbar-expand-lg navbar-dark bg-primary".>
-    <a class="navbar-brand">The Royal Wedding</a>
+<nav class="navbar navbar-expand-lg navbar-dark bg-success".>
+    <a class="navbar-brand" href="#"><img src="../images/sussex.png" height="59" width="45"/>The Royal Wedding</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
@@ -41,6 +44,8 @@
                 <a class="nav-link" href="/newpost">Add New Post<span class="sr-only">(current)</span></a>
             <li class="nav-item active">
                 <a class="nav-link" href="/listpost">View All Posts<span class="sr-only">(current)</span></a>
+            <li class="nav-item active">
+                <a class="nav-link" href="/">Back to the Ceremony<span class="sr-only">(current)</span></a>
         </ul>
     </div>
 </nav>
@@ -49,7 +54,7 @@
 
 
 <body>
-
+<div class="main">
 <table class="table table-hover">
     <thead>
     <tr>
@@ -79,6 +84,8 @@
 
 <div class="link">
     <a class="btn btn-success" href="/newpost" role="button">Add a wish!</a>
+</div>
+
 </div>
 
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
